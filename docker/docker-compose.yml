@@ -1,0 +1,12 @@
+version: "3.4"
+services:
+    hktv-stock-alert:
+        build:
+            context: ../
+            dockerfile: Dockerfile
+        environment: 
+            - TZ=Asia/Hong_Kong
+        volumes:
+            - ../:/var/src/app
+        command: python -u hktv.py
+        restart: always
